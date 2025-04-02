@@ -1,0 +1,184 @@
+/* CÓDIGO CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("img/Fondo.png");
+  color: #4a4d50;
+  font-family: 'Cardo', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contenedor {
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "navbar navbar navbar"
+    "contenido contenido sidebar"
+    "bloque1 bloque1 bloque2 "
+    "footer footer footer";
+}
+
+.contenido {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  grid-area: contenido;
+}
+
+nav {
+  background: #844026;
+  color: #fff;
+  grid-area: navbar;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #181918;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.bloque {
+  color: #ffff;
+  text-align: justify;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#bloque1 {
+  grid-area: bloque1;
+  background: #867a5b;
+}
+
+#bloque2 {
+  grid-area: bloque2;
+  background: #BEA695;
+}
+
+footer {
+  background: #4a4d50;
+  color: #fff;
+  grid-area: footer;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgb(41, 8, 206);
+}
+
+@media screen and (max-width: 768px) {
+  .contenedor {
+    background: #181918;
+    grid-template-areas:
+      "navbar navbar navbar"
+      "contenido contenido contenido"
+      "sidebar sidebar sidebar"
+      "bloque1 bloque1 bloque1"
+      "bloque2 bloque2 bloque2"
+      "footer footer footer";
+  }
+
+  .button-toggle {
+    display: block;
+    /* Mostrar botón hamburguesa */
+  }
+
+  .menu {
+    display: none;
+    /* Ocultar el menú inicialmente */
+    flex-direction: column;
+    background: #844026;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+  }
+
+  .menu a {
+    display: block;
+    padding: 10px;
+    color: white;
+  }
+
+  /* Cuando el menú está abierto */
+  .menu.open {
+    display: flex;
+  }
+}.imagen-reducida {
+  width: 100%; /* Ajusta según lo necesites */
+  max-width: 600px; /* Tamaño máximo */
+  height: auto; /* Mantiene la proporción */
+}
+a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: inherit; /* Hereda el color del texto padre */
+}
+nav {
+  display: flex; /* Organiza los elementos de manera horizontal */
+  justify-content: space-around; /* Espacia los elementos equitativamente */
+  align-items: center; /* Alinea los elementos verticalmente */
+  padding: 10px; /* Añade algo de espacio dentro del contenedor */
+}
+
+.foto-perfil {
+  width: 240px;             /* Reduce el tamaño de la imagen */
+  height: 240px;            /* Mantiene la imagen cuadrada */
+  border-radius: 50%;      /* La hace circular */
+  object-fit: cover;       /* Asegura que la imagen no se distorsione */
+  margin-bottom: 20px;     /* Espacio entre la foto y el contenido debajo de ella */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra sut
+}
+.skills {
+  color: #fff;
+  text-align: center;
+  margin-top: 20px; /* Espacio debajo de la foto de perfil */
+}
+
+.skills h4 {
+  margin-bottom: 10px; /* Espacio entre el título de habilidades y las listas */
+}
+
+.skills ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  padding: 0;
+}
+
+.skills ul li {
+  margin-bottom: 8px;    /* Espacio entre cada habilidad */
+}
